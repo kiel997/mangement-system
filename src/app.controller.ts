@@ -7,6 +7,7 @@ export class AppController {
 
   @Get()
   getHello(): string {
+    console.log('inside the route handler')
     return this.appService.getHello();
   }
 }

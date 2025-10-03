@@ -13,6 +13,9 @@ import { loginDto } from './dto/login.dto';
 
 @Injectable()
 export class UserService {
+  findOne(id: string) {
+    throw new Error('Method not implemented.');
+  }
   constructor(@InjectRepository(User) private userRepo: Repository<User>, private jwtService: JwtService){}
   async create(payload: CreateUserDto) {
     const {email, password, ...rest} = payload;

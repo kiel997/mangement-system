@@ -3,12 +3,14 @@ import { AppModule } from './app.module';
 import { ConfigService } from '@nestjs/config';
 import * as cookieParser from 'cookie-parser';
 import { ValidationPipe } from '@nestjs/common';
+import { loggerMiddleware } from './middlewares/logger/logger.middleware';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  app.use(loggerMiddleware)
   app.enableCors({
-    origin: '*',
-    // origin: 'http://localhost:3000',
+    
+    origin: 'http://localhost:3000',
     credentials: true,
   });
   app.useGlobalPipes(
