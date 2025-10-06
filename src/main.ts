@@ -10,7 +10,7 @@ async function bootstrap() {
   app.use(loggerMiddleware)
   app.enableCors({
     
-    origin: 'http://localhost:3000',
+    origin: '*',
     credentials: true,
   });
   app.useGlobalPipes(
